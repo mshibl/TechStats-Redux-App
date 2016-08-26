@@ -12,6 +12,10 @@ $accent-red: #dd6464;
   width: 80vw;
 }
 
+.amcharts-chart-div a{
+  display: none !important;
+}
+
 body {
   background-color: $main-bg-color;
   color: #fff;

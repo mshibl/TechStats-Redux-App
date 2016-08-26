@@ -9,11 +9,11 @@ export class App extends Component {
   }
 
   render() {
-    const { actions } = this.props;
+    const { chart, actions } = this.props;
     return (
       <div className="main-app-container">
         <div className="main-app-nav">TechStats</div>
-        <Chart actions={actions} />
+        <Chart chartData={chart} actions={actions} />
         <Footer />
       </div>
     );
@@ -25,7 +25,7 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    chart: state.chart
   };
 }
 
