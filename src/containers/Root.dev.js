@@ -10,9 +10,9 @@ module.exports = class Root extends Component {
       <Provider store={store}>
         <div id="test">
           <App />
-          <DevTools />
         </div>
       </Provider>
     );
   }
 };
+          // <DevTools />

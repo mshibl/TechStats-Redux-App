@@ -6,6 +6,11 @@ require('../../vendor/dark');
 require('amcharts3-react');
 
 class Chart extends Component {
+	compareData(a, b) {
+	    let result = a.points > b.points ? -1 : 1
+	    return result
+	}
+
 	render() {
 		const {type, theme, categoryField, dataProvider, graphs} = this.props.chartData
 		return(
@@ -13,9 +18,12 @@ class Chart extends Component {
 	          type= {type}
 	          theme= {theme}
 	          graphs= {graphs}
-	          dataProvider= {dataProvider} 
+	          dataProvider= {dataProvider.sort(this.compareData)}
 	          categoryField= {categoryField}
-	          />
+	          autocolor= {true}
+	          marginTop= {50}
+	          startDuration= {2}
+	        />
 		)
 	}
 }
