@@ -1,15 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
 
-$main-bg-color: #f1f2f0;
+$main-bg-color: #30303d;
 $accent-blue: #37bbe4;
 $accent-gray: #e1e0dd;
 $accent-black: #35342f;
 $accent-orange: #ec6b2d;
 $accent-red: #dd6464;
 
+#__AmCharts_React_1__ {
+  height: 80vh;
+  width: 80vw;
+}
+
 body {
   background-color: $main-bg-color;
-  color: $accent-black;
+  color: #fff;
   display: flex;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
