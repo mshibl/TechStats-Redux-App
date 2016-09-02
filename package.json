@@ -4,6 +4,8 @@
   "description": "My simple redux application.",
   "scripts": {
     "clean": "rimraf dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "postinstall": "npm run clean && npm run build:webpack",
     "dev": "NODE_ENV=development npm start",
     "start": "node server.js",
     "lint": "eslint src"
