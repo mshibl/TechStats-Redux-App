@@ -7,7 +7,7 @@
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "dev": "NODE_ENV=development npm start",
-    "start": "node devServer.js",
+    "start": "node server.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -17,6 +17,11 @@
   "license": "MIT",
   "homepage": "https://github.com/tsaiDavid/simple-redux-boilerplate",
   "devDependencies": {
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0"
+  },
+  "dependencies": {
+    "amcharts3-react": "git://github.com/mshibl/amcharts3-react.git",
     "autoprefixer": "^6.3.1",
     "babel-core": "^6.3.15",
     "babel-eslint": "^5.0.0-beta4",
@@ -41,15 +46,13 @@
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12",
-    "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
-  },
-  "dependencies": {
-    "amcharts3-react": "git://github.com/mshibl/amcharts3-react.git",
+    "child_process": "^1.0.2",
+    "ipaddr.js": "^1.2.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.1.1",
-    "redux-thunk": "^1.0.3"
+    "redux-thunk": "^1.0.3",
+    "type-is": "^1.6.13"
   }
 }
