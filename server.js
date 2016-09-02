@@ -16,13 +16,13 @@ if(!isProduction){
 
 	app.use(require('webpack-hot-middleware')(compiler));
 } else {
-	const child_process = require('child_process');
-	child_process.exec("webpack -p --config webpack.config.prod", function (error, stdout, stderr) {
-		console.log('stdout: ' + stdout);
-		console.log('stderr: ' + stderr);
-		if (error) { console.log('exec error: ' + error); }
+	// const child_process = require('child_process');
+	// child_process.exec("webpack -p --config webpack.config.prod", function (error, stdout, stderr) {
+	// 	console.log('stdout: ' + stdout);
+	// 	console.log('stderr: ' + stderr);
+	// 	if (error) { console.log('exec error: ' + error); }
+	// });
 		app.use(express.static(config.output.publicPath));
-	});
 }
 
 app.get('*', (req, res) => {
