@@ -25,7 +25,7 @@ if(!isProduction){
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
 	console.log(path.join(__dirname, 'index.html'))
-	console.log(__dirname, 'index.html')
+	console.log(__dirname + 'index.html')
 	app.use(express.static());
 }
 
