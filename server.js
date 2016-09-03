@@ -25,7 +25,7 @@ if(!isProduction){
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
 	// app.use(express.static(config.output.publicPath));
-	app.use(express.static(config.output.path));
+	app.use(express.static(__dirname));
 	console.log(path.join(__dirname, 'index.html'))
 }
 
