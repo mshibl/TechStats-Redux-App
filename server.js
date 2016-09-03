@@ -25,10 +25,11 @@ if(!isProduction){
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
 	// app.use(express.static(config.output.publicPath));
-	app.use(express.static(__dirname));
+	// app.use(express.static(__dirname));
 }
 
 app.get('*', (req, res) => {
+	console.log(path.join(__dirname, 'index.html'))
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
