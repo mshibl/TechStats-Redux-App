@@ -9,6 +9,7 @@ const compiler = webpack(config);
 const port = isProduction ? process.env.PORT : 3000;
 
 if(!isProduction){
+	console.log("here")
 	app.use(require('webpack-dev-middleware')(compiler, {
 	  noInfo: true,
 	  publicPath: config.output.publicPath
@@ -25,11 +26,12 @@ if(!isProduction){
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
 	console.log(path.join(__dirname, 'index.html'))
-	console.log(__dirname + 'index.html')
+	console.log(__dirname + '/index.html')
 	app.use(express.static(__dirname));
 }
 
-app.get('*', (req, res) => {
+app.get('*', (req, res, err) => {
+	console.log(err)
   res.sendFile('index.html' + {root: __dirname})
 });
 
