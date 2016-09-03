@@ -26,7 +26,7 @@ if(!isProduction){
 	// });
 	console.log(path.join(__dirname, 'index.html'))
 	console.log(__dirname + 'index.html')
-	app.use(express.static());
+	app.use(express.static(__dirname));
 }
 
 app.get('*', (req, res) => {
