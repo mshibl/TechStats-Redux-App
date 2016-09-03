@@ -24,7 +24,7 @@ if(!isProduction){
 	// 	console.log('stderr: ' + stderr);
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
-	console.log(__dirname)
+	console.log(path.join(__dirname, 'index.html'))
 	app.use(express.static(__dirname));
 }
 
