@@ -13,8 +13,10 @@ if(!isProduction){
 	  noInfo: true,
 	  publicPath: config.output.publicPath
 	}));
-
+	
 	app.use(require('webpack-hot-middleware')(compiler));
+	// console.log(config.output.publicPath)
+	// app.use(express.static(__dirname));
 } else {
 	// const child_process = require('child_process');
 	// child_process.exec("webpack -p --config webpack.config.prod", function (error, stdout, stderr) {
@@ -22,7 +24,8 @@ if(!isProduction){
 	// 	console.log('stderr: ' + stderr);
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
-		app.use(express.static(config.output.publicPath));
+	// app.use(express.static(config.output.publicPath));
+	app.use(express.static(__dirname));
 }
 
 app.get('*', (req, res) => {
