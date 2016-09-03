@@ -30,10 +30,11 @@ app.get('*', function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
-app.listen(port, function(error) {
-  if (error) {
-    console.error(error)
-  } else {
-  	isProduction ? console.info("==> 🌎  Application up and running", port) : console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
+app.listen(port, (err) => {
+  if (err) {
+    console.log(err);
+    return;
   }
-})
+
+  isProduction ? console.info("==> 🌎  Application up and running", port) : console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
+});
