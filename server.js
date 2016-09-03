@@ -16,9 +16,9 @@ if(!isProduction){
 	// }));
 	
 	// app.use(require('webpack-hot-middleware')(compiler));
-	console.log(path.join(__dirname, 'index.html'))
-	console.log(__dirname + '/index.html')
-	app.use(express.static(__dirname));
+	// console.log(path.join(__dirname, 'index.html'))
+	// console.log(__dirname + '/index.html')
+	// app.use(express.static(__dirname));
 } else {
 	// console.log(path.join(__dirname, 'index.html'))
 	// console.log(__dirname + '/index.html')
@@ -30,11 +30,10 @@ app.get('*', function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
-app.listen(port, 'localhost', (err) => {
-  if (err) {
-    console.log(err);
-    return;
+app.listen(port, function(error) {
+  if (error) {
+    console.error(error)
+  } else {
+  	isProduction ? console.info("==> 🌎  Application up and running", port) : console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
-
-  isProduction ? console.info("==> 🌎  Application up and running", port) : console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
-});
+})
