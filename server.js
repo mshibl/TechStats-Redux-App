@@ -31,7 +31,7 @@ if(!isProduction){
 
 app.get('*', (req, res) => {
   // res.sendFile(path.join(__dirname, 'index.html'));
-  response.render('pages/index');
+  response.render('index.html');
 });
 
 app.listen(port, 'localhost', (err) => {
