@@ -24,8 +24,8 @@ if(!isProduction){
 	// 	console.log('stderr: ' + stderr);
 	// 	if (error) { console.log('exec error: ' + error); }
 	// });
-	console.log(config.output.publicPath)
-	app.use(express.static(config.output.publicPath));
+	console.log(__dirname)
+	app.use(express.static(__dirname));
 }
 
 app.get('*', (req, res) => {
