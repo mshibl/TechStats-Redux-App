@@ -30,8 +30,7 @@ if(!isProduction){
 }
 
 app.get('*', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'index.html'));
-  response.render('index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(port, 'localhost', (err) => {
