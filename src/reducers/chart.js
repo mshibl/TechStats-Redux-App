@@ -20,7 +20,7 @@ let initState = {	categoryField: "name",
 				            "name": "Java",
 				            "demand": 0,
 				            "color": "#5878a9", 
-				            "icon": "http://findicons.com/files/icons/1008/quiet/256/java.png",
+				            "icon": "http://icons.iconarchive.com/icons/tatice/cristal-intense/128/Java-icon.png",
 				        },
 				        {
 				        	"name": "JavaScript",
@@ -38,7 +38,7 @@ let initState = {	categoryField: "name",
 				        	"name": "Ruby",
 				            "demand": 0,
 				            "color": "#852325",
-				            "icon": "http://ruby-fundamentals.herokuapp.com/images/ico_ruby.png"
+				            "icon": "https://ruby-fundamentals.herokuapp.com/images/ico_ruby.png"
 				        },
 				        {
 				        	"name": "C++",
@@ -62,13 +62,13 @@ let initState = {	categoryField: "name",
 				        	"name": "Swift",
 				            "demand": 0,
 				            "color": "#fe462a",
-				            "icon": "http://vignette3.wikia.nocookie.net/ipod/images/0/01/Developer_swift_icon.png/revision/latest?cb=20140828235538"
+				            "icon": "https://vignette3.wikia.nocookie.net/ipod/images/0/01/Developer_swift_icon.png/revision/latest?cb=20140828235538"
 				        },
 				        {
 				        	"name": "Objective-C",
 				            "demand": 0,
 				            "color": "#ad7745",
-				            "icon": "http://2.bp.blogspot.com/-BuR1DpqQprU/U5CQ_0w2L7I/AAAAAAAABZY/H9wbfbO-kew/s1600/iOS_Objective_C.png"
+				            "icon": "https://2.bp.blogspot.com/-BuR1DpqQprU/U5CQ_0w2L7I/AAAAAAAABZY/H9wbfbO-kew/s1600/iOS_Objective_C.png"
 				        },
 				        {
 				        	"name": "Perl",

@@ -2,11 +2,23 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const app = express();
+const bodyParser = require('body-parser');
+const morgan     = require('morgan');
+const mongoose   = require('mongoose');
+const languages = require('./server/app/language/language.controller')
 
 const isProduction = process.env.NODE_ENV === 'production';
 const config = isProduction ? require('./webpack.config.prod') : require('./webpack.config.dev');
 const compiler = webpack(config);
 const port = isProduction ? process.env.PORT : 3000;
+
+mongoose.connect('mongodb://'+process.env.dbuser+':'+process.env.dbpass+'@ds017726.mlab.com:17726/techstats');
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// REGISTER ROUTES -------------------------------
+app.use('/languages', languages)
 
 if(!isProduction){
 	app.use(require('webpack-dev-middleware')(compiler, {

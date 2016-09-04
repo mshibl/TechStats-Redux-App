@@ -1,6 +1,10 @@
 import { UPDATE_CHART } from '../constants/ActionTypes';
 import fetch from 'isomorphic-fetch'
 
+const isProduction = window.location.hostname != "localhost"
+const apiHostName = isProduction? "https://" : "http://" + window.location.hostname + ":" + window.location.port
+console.log(apiHostName)
+
 function updateChartData(newData){
   return {
     type: UPDATE_CHART,
@@ -13,8 +17,9 @@ function filterLanguages(language){
 }
 
 export function loadData(chartData){
+  console.log(apiHostName + "/languages/demand")
   return dispatch => {
-    fetch("http://localhost:8080/languages/demand")
+    fetch(apiHostName + "/languages/demand")
       .then(res => res.json())
       .then(json => {
         let newData = chartData.map(function(language){
