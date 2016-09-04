@@ -2,7 +2,7 @@ import { UPDATE_CHART } from '../constants/ActionTypes';
 import fetch from 'isomorphic-fetch'
 
 const isProduction = window.location.hostname != "localhost"
-const apiHostName = isProduction? "https://" + window.location.hostname  : "http://" + window.location.hostname + ":" + window.location.port
+const apiHostName = isProduction? "http://" + window.location.hostname  : "http://" + window.location.hostname + ":" + window.location.port
 // console.log(apiHostName)
 
 function updateChartData(newData){
