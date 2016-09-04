@@ -20,7 +20,7 @@ let initState = {	categoryField: "name",
 				            "name": "Java",
 				            "demand": 0,
 				            "color": "#5878a9", 
-				            "icon": "http://icons.iconarchive.com/icons/tatice/cristal-intense/128/Java-icon.png",
+				            "icon": "https://icons.iconarchive.com/icons/tatice/cristal-intense/128/Java-icon.png",
 				        },
 				        {
 				        	"name": "JavaScript",
