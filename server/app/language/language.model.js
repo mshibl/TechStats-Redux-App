@@ -4,7 +4,11 @@ var Schema       = mongoose.Schema;
 var LanguageSchema = new Schema({
 	name: String,
 	query: String,
-	demand: Number
+	SOQuery: String,
+	demand: Number,
+	questions: Number,
+	icon: String,
+	color: String
 })
 
 module.exports = mongoose.model('Language', LanguageSchema);

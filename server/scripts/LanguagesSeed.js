@@ -1,6 +1,6 @@
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://'+process.env.dbuser+':'+process.env.dbpass+'@ds017726.mlab.com:17726/techstats'); // connect to our database
-var Language = require('../app/models/language')
+var Language = require('../app/language/language.model')
 
 var languages = [
 	{name: "Java", query: "java"},

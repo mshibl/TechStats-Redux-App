@@ -9,7 +9,15 @@ languages.use(function(req, res, next) {
 
 languages.route('/demand')
 	.get(function(req,res){
-		Language.find(function(err, langs){
+		Language.find({},'name icon color demand -_id',function(err, langs){
+			if(err) res.send(err);
+			res.json(langs)
+		})
+	})
+
+languages.route('/questions')
+	.get(function(req,res){
+		Language.find({},'name icon color demand -_id',function(err, langs){
 			if(err) res.send(err);
 			res.json(langs)
 		})
