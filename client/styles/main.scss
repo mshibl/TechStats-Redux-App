@@ -97,6 +97,8 @@ button{
 .text, .hidden-text{
   position: relative;
   top: -0.1em;
+  animation-name: slide-down;
+  animation-duration: 0.5s;
 }
 
 button:hover > .text, .hidden-text{
@@ -104,14 +106,29 @@ button:hover > .text, .hidden-text{
   animation-fill-mode: forwards;
 }
 
-button:hover > .text, button:hover > .hidden-text{
-  animation-name: slide;
+button:hover > .text{
+  animation-name: slide-up;
   animation-duration: 0.5s;
 }
 
-@keyframes slide{
-  from { top: -0.1em; }
-  to { top: -1.7em; }
+button:hover > .hidden-text{
+  animation-name: slide-out;
+  animation-duration: 0.5s;  
+}
+
+@keyframes slide-down{
+  from { top: -1.7em; opacity: 0;}
+  to { top: -0.1em; opacity: 1;}
+}
+
+@keyframes slide-up{
+  from { top: -0.1em; opacity: 1;}
+  to { top: -1.7em; opacity: 0;}
+}
+
+@keyframes slide-out{
+  from { top: -0.1em; opacity: 0;}
+  to { top: -1.6em; opacity: 1;}
 }
 
 footer {
