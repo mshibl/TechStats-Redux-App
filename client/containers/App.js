@@ -15,9 +15,27 @@ export class App extends Component {
     const { chart, actions } = this.props;
     return (
       <div className="main-app-container">
-        <div className="main-app-nav">TechStats</div>
-        <img id="stackoverflow" src="http://goo.gl/LkwMMo" onClick={() => this.props.actions.loadData("questions")} />
-        <img id="indeed" src="http://goo.gl/1xRiQ7" onClick={() => this.props.actions.loadData("demand")}/>
+        <div className="title"><span className="light">Dev</span>Stats</div>
+        <div className="subtitle">Compare programming languages in terms of job demand, community size & amount of Q&A</div>
+        <div className="main-buttons">
+          <div id="stackoverflow">
+            <button type="button" 
+                    className="btn btn-success"
+                    onClick={() => this.props.actions.loadData("demand")}>
+              <div className="text">Market Demand</div>
+              <div className="hidden-text">Data from Indeed!</div>
+            </button>
+            <button type="button" className="btn btn-success"
+                    onClick={() => this.props.actions.loadData("questions")}>
+              <div className="text">Community Support</div>
+              <div className="hidden-text">Data from StackOverflow!</div>
+            </button>
+            {/* <img src="http://goo.gl/LkwMMo" onClick={() => this.props.actions.loadData("questions")} /> */}
+          </div>
+          <div id="indeed">
+            {/* <img src="http://goo.gl/1xRiQ7" onClick={() => this.props.actions.loadData("demand")}/> */}
+          </div>
+        </div>
         <Chart chartData={chart} actions={actions} />
         <Footer />
       </div>

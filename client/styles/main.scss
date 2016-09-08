@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
 $main-bg-color: #30303d;
 $accent-blue: #37bbe4;
@@ -6,6 +8,7 @@ $accent-gray: #e1e0dd;
 $accent-black: #35342f;
 $accent-orange: #ec6b2d;
 $accent-red: #dd6464;
+$font-family: 'Open Sans', sans-serif;
 
 #__AmCharts_React_1__ {
   height: 80vh;
@@ -21,16 +24,27 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: $font-family;
 }
 
 .main-app-container {
   padding-top: 2em;
 }
 
-.main-app-nav {
+.title {
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 0.2em;
   font-size: 2em;
   text-align: center;
+  .light {
+    font-weight: lighter;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  /*font-family: $font-family;*/
+  /*width: 50%;*/
 }
 
 .counter-num-label {
@@ -49,13 +63,17 @@ body {
   letter-spacing: 3px;
 }
 
-.counter-buttons {
+.main-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3em;
+  padding-top: 1em;
 
-  button {
+/*  div {
+    margin: 1em;
+  }*/
+
+/*  button {
     background-color: #CCC;
     border: none;
     height: 30px;
@@ -66,7 +84,34 @@ body {
     &:hover {
       background-color: $accent-gray;
     }
-  }
+  }*/
+}
+
+
+button{
+  overflow: hidden !important;
+  height: 2.1em;
+  margin: 1em;
+}
+
+.text, .hidden-text{
+  position: relative;
+  top: -0.1em;
+}
+
+button:hover > .text, .hidden-text{
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+button:hover > .text, button:hover > .hidden-text{
+  animation-name: slide;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide{
+  from { top: -0.1em; }
+  to { top: -1.7em; }
 }
 
 footer {
