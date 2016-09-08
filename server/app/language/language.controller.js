@@ -17,7 +17,7 @@ languages.route('/demand')
 
 languages.route('/questions')
 	.get(function(req,res){
-		Language.find({},'name icon color demand -_id',function(err, langs){
+		Language.find({},'name icon color questions -_id',function(err, langs){
 			if(err) res.send(err);
 			res.json(langs)
 		})
