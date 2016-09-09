@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const morgan     = require('morgan');
 const mongoose   = require('mongoose');
 const languages = require('./server/app/language/language.controller')
+const fetch = require('isomorphic-fetch')
 
 const isProduction = process.env.NODE_ENV === 'production';
 const config = isProduction ? require('./webpack.config.prod') : require('./webpack.config.dev');
@@ -29,6 +30,11 @@ if(!isProduction){
 	
 	app.use(require('webpack-hot-middleware')(compiler));
 } else {
+	// ping heroku app every 5 minutes to prevent from going idle
+	setInterval(function() {
+	    fetch("http://alltechstats.herokuapp.com");
+	}, 300000);
+
 	app.use(express.static(__dirname));
 }
 

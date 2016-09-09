@@ -19,16 +19,21 @@ export class App extends Component {
         <div className="subtitle">Compare programming languages in terms of job demand, community size & amount of Q&A</div>
         <div className="main-buttons">
           <div id="stackoverflow">
-            <button type="button" 
-                    className="btn btn-success"
+            <button type="button" className="btn btn-info"
                     onClick={() => this.props.actions.loadData("demand")}>
-              <div className="text">Market Demand</div>
-              <div className="hidden-text">Data from Indeed!</div>
+              <div className="text">Number of Jobs</div>
+              <div className="hidden-text">
+                <img src="http://res.cloudinary.com/shibl/image/upload/c_scale,w_15/v1473395068/jj2z8DZ-Z5rV-Y4IY0ZklkuPjCchjeeisflFD0dU_zlJNpbUJkDTQpAMlc5rwutKFSU_w300_ixdwl3.png"></img>
+                &nbsp; Data from Indeed!
+              </div>
             </button>
-            <button type="button" className="btn btn-success"
+            <button type="button" className="btn btn-info"
                     onClick={() => this.props.actions.loadData("questions")}>
-              <div className="text">Community Support</div>
-              <div className="hidden-text">Data from StackOverflow!</div>
+              <div className="text">Availble Support and Q&A</div>
+              <div className="hidden-text">
+                <img src="http://res.cloudinary.com/shibl/image/upload/c_scale,w_15/v1473395366/icon-stackoverflow_nejhzt.png"></img>
+                &nbsp; Data from StackOverflow!
+              </div>
             </button>
             {/* <img src="http://goo.gl/LkwMMo" onClick={() => this.props.actions.loadData("questions")} /> */}
           </div>
