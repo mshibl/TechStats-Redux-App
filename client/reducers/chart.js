@@ -16,6 +16,7 @@ let initState = {
 							"balloonText": "<span style='font-size:13px;'><b>[[value]]</b></span>",
 							"valueField": "demand"
 						}],
+					valueAxes: [{"title": "Number of Jobs on Indeed.com"}],
 					dataProvider: []
 			    }
 
@@ -25,7 +26,8 @@ export default function chart(state = initState, action) {
 	  case UPDATE_CHART:
 	  	return Object.assign({}, state, {
 	  		dataProvider: action.newChartData,
-	  		graphs: action.newGraphsData
+	  		graphs: action.newGraphsData,
+	  		valueAxes: action.newValueAxes
 	  	})
 	  default:
 	    return state;

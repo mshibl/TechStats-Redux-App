@@ -7,7 +7,7 @@ require('amcharts3-react');
 
 class Chart extends Component {
 	render() {
-		const {type, theme, categoryField, dataProvider, graphs} = this.props.chartData
+		const {type, theme, categoryField, dataProvider, graphs, valueAxes} = this.props.chartData
 		return(
 			<div>
 				<AmCharts.React
@@ -16,6 +16,7 @@ class Chart extends Component {
 		          graphs= {graphs}
 		          dataProvider= {dataProvider}
 		          categoryField= {categoryField}
+		          valueAxes= {valueAxes}
 		          autocolor= {true}
 		          marginTop= {50}
 		          startDuration= {2}

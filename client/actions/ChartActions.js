@@ -4,12 +4,12 @@ import fetch from 'isomorphic-fetch'
 const isProduction = window.location.hostname != "localhost"
 const apiHostName = isProduction? "http://" + window.location.hostname  : "http://" + window.location.hostname + ":" + window.location.port
 
-function updateChartData(newChartData, newGraphsData){
-  console.log(newGraphsData)
+function updateChartData(newChartData, newGraphsData, newValueAxes){
   return {
     type: UPDATE_CHART,
     newChartData,
-    newGraphsData
+    newGraphsData,
+    newValueAxes
   }
 }
 
@@ -26,7 +26,10 @@ export function loadData(valueField){
         let newGraphsData = [Object.assign({},graphs,{
           valueField: valueField
         })]
-        dispatch(updateChartData(newChartData, newGraphsData))
+        let newValueAxes = [{"title": ""}]
+        if (valueField == "demand") newValueAxes = [{"title": "Number of Jobs on Indeed.com"}]
+        if (valueField == "questions") newValueAxes = [{"title": "Number of Questions on StackOverflow"}]
+        dispatch(updateChartData(newChartData, newGraphsData, newValueAxes))
       })
     }
 }
