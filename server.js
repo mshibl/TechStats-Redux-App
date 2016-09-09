@@ -32,7 +32,8 @@ if(!isProduction){
 } else {
 	// ping heroku app every 5 minutes to prevent from going idle
 	setInterval(function() {
-	    fetch("http://alltechstats.herokuapp.com");
+	    fetch("http://alldevstats.herokuapp.com");
+	    console.log("aplication pinged to avoid idle state")
 	}, 300000);
 
 	app.use(express.static(__dirname));
